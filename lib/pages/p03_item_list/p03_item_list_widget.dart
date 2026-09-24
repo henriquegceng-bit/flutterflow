@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/bottomsheets/compare_sheet/compare_sheet_widget.dart';
 import '/bottomsheets/favoritos_sheet/favoritos_sheet_widget.dart';
@@ -412,6 +413,8 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                           pSearchTerm: _model
                                                               .textController
                                                               .text,
+                                                          authToken:
+                                                              currentJwtToken,
                                                         );
 
                                                         if ((_model
@@ -490,6 +493,8 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                         pSearchTerm: _model
                                                             .textController
                                                             .text,
+                                                        authToken:
+                                                            currentJwtToken,
                                                       );
 
                                                       if ((_model
@@ -702,6 +707,8 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                                       pSearchTerm: _model
                                                                           .textController
                                                                           .text,
+                                                                      authToken:
+                                                                          currentJwtToken,
                                                                     );
 
                                                                     if ((_model
@@ -1109,6 +1116,7 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                                                             _model.outSugestoes1 = await BuscaSugestoesCall.call(
                                                                                               pListId: widget.listId,
                                                                                               pSearchTerm: _model.textController.text,
+                                                                                              authToken: currentJwtToken,
                                                                                             );
 
                                                                                             if ((_model.outSugestoes1?.succeeded ?? true)) {
@@ -1187,6 +1195,7 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                     pListId: widget.listId,
                                                     pSearchTerm: _model
                                                         .textController.text,
+                                                    authToken: currentJwtToken,
                                                   ),
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
@@ -1351,6 +1360,7 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                                                 _model.outSugestoes = await BuscaSugestoesCall.call(
                                                                                   pListId: widget.listId,
                                                                                   pSearchTerm: _model.textController.text,
+                                                                                  authToken: currentJwtToken,
                                                                                 );
 
                                                                                 if ((_model.outSugestoes?.succeeded ?? true)) {
@@ -1418,6 +1428,7 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                                                 await BuscaSugestoesCall.call(
                                                                               pListId: widget.listId,
                                                                               pSearchTerm: _model.textController.text,
+                                                                              authToken: currentJwtToken,
                                                                             );
 
                                                                             if ((_model.outSugestoes2?.succeeded ??

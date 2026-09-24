@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/bottomsheets/cadastro_sheet/cadastro_sheet_widget.dart';
@@ -21,13 +22,11 @@ class ProductAlternativeSheetWidget extends StatefulWidget {
     this.productInfo,
     this.supermarketID,
     this.tripID,
-    this.familyID,
   });
 
   final ViewLiveTripItemsRow? productInfo;
   final String? supermarketID;
   final String? tripID;
-  final String? familyID;
 
   @override
   State<ProductAlternativeSheetWidget> createState() =>
@@ -405,6 +404,7 @@ class _ProductAlternativeSheetWidgetState
                           child: FutureBuilder<ApiCallResponse>(
                             future: BuscaSugestoesCall.call(
                               pSearchTerm: _model.textController.text,
+                              authToken: currentJwtToken,
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.

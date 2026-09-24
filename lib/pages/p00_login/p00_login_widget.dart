@@ -2028,9 +2028,6 @@ class _P00LoginWidgetState extends State<P00LoginWidget>
                                                             'name': _model
                                                                 .nameCreateTextController
                                                                 .text,
-                                                            'username': _model
-                                                                .userNameCreateTextController
-                                                                .text,
                                                           });
 
                                                           context.goNamedAuth(

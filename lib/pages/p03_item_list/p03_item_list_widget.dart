@@ -399,6 +399,8 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                         pSearchTerm: _model
                                                             .textController
                                                             .text,
+                                                        authToken:
+                                                            currentJwtToken,
                                                       );
 
                                                       if ((_model
@@ -480,6 +482,8 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                       pListId: widget.listId,
                                                       pSearchTerm: _model
                                                           .textController.text,
+                                                      authToken:
+                                                          currentJwtToken,
                                                     );
 
                                                     if ((_model
@@ -692,6 +696,8 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                                         _model
                                                                             .textController
                                                                             .text,
+                                                                    authToken:
+                                                                        currentJwtToken,
                                                                   );
 
                                                                   if ((_model
@@ -867,6 +873,7 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                     pListId: widget.listId,
                                                     pSearchTerm: _model
                                                         .textController.text,
+                                                    authToken: currentJwtToken,
                                                   ),
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
@@ -1110,6 +1117,7 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                                                           _model.outAdicionados1 = await BuscaItensAdicionadosCall.call(
                                                                                             pListId: widget.listId,
                                                                                             pSearchTerm: _model.textController.text,
+                                                                                            authToken: currentJwtToken,
                                                                                           );
 
                                                                                           if ((_model.outAdicionados1?.succeeded ?? true)) {
@@ -1354,6 +1362,7 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                                               _model.outAdicionados = await BuscaItensAdicionadosCall.call(
                                                                                 pListId: widget.listId,
                                                                                 pSearchTerm: _model.textController.text,
+                                                                                authToken: currentJwtToken,
                                                                               );
 
                                                                               if ((_model.outAdicionados?.succeeded ?? true)) {
@@ -1420,6 +1429,8 @@ class _P03ItemListWidgetState extends State<P03ItemListWidget> {
                                                                                 widget.listId,
                                                                             pSearchTerm:
                                                                                 _model.textController.text,
+                                                                            authToken:
+                                                                                currentJwtToken,
                                                                           );
 
                                                                           if ((_model.outAdicionados2?.succeeded ??

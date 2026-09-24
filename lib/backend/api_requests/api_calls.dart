@@ -159,6 +159,7 @@ class BuscaItensAdicionadosCall {
   static Future<ApiCallResponse> call({
     String? pListId = '44444444-0000-0000-0000-000000000001',
     String? pSearchTerm = '',
+    String? authToken = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -173,8 +174,7 @@ class BuscaItensAdicionadosCall {
       headers: {
         'apikey':
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhbHdsdnVhcWF0anVnZ3R3ZXRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5Mjc5NjUsImV4cCI6MjA4NzUwMzk2NX0.wZ0JVTLurVXsBo0EdpkOTUEM_XeHi64Dqhl6ekyoj0o',
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhbHdsdnVhcWF0anVnZ3R3ZXRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5Mjc5NjUsImV4cCI6MjA4NzUwMzk2NX0.wZ0JVTLurVXsBo0EdpkOTUEM_XeHi64Dqhl6ekyoj0o',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
